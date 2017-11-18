@@ -35,7 +35,7 @@ deploy:
   provider: releases
   api_key:
     secure: B7f2GEHlkI5XJiVd/yZsH0rOFDGacfT534GLSKpOU3eC4TNrAXDJruMwQvA7eBdYzD9oAmiUY+NoO948/EYCz0U48iVc2AGSBwAmyxAh6ojZnHwjDDMkEiEEsbhDlAKomlkUgzWHlDDWpQ0qQYKJD0YAtl8KdsgK19YxZysmfJPRITk5JrdKw94ALI8LFmS6XWRPzIEWtYF22PH8DRncZR/wRbtqdTFKmB6bGW+56NPKR7mwnbDU/Xn8+Oi0yrAZ3/NUkVulqWwZSrjBFN6hk8qgoJ24HAFqjIG0MEliEsRjIxzTNtx+LfY1kGTyIS8xfUJKTZCoqJ3gHWSBN2C7mzUxvIHhhoFYZ1eNntY1Bmg060q1EvCx5uGbMceTiG3sJQHgnlLSQ2rIcEo43CHOBkxqJ9I+8hskmz73Je/l900gBIB4qh8nSW81PbWkqUPWnpiSEzejDdx+8AwMAj4ytu4vyWY5FAOsKRglHCHxpNkb18k0227YxU8aRQUx3OQBpQVjnnR/01z9br4vzZyzh2xGFkWR54sOLxr9wUjaXvuFiVTqoiDe7WU7tAgVEVHd58DpjmDJC+iVJo3q5/JNdTNNRKoYxw7+zhu753ShVCUvPWrhUAX0IgNGoYG8jXdZqkdszGEDKG8qouruzLVWCkScZAMixkktDeFveK7dWks=
-  file: app-release.apk
+  file: /home/travis/build/javibm/project-gamesbase/build/app/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
     repo: javibm/project-gamesbase
