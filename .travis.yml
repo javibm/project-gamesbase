@@ -1,45 +1,44 @@
 os: linux
 language: android
 licenses:
-  - 'android-sdk-preview-license-.+'
-  - 'android-sdk-license-.+'
-  - 'google-gdk-license-.+'
+- android-sdk-preview-license-.+
+- android-sdk-license-.+
+- google-gdk-license-.+
 android:
   components:
-    - tools
-    - platform-tools
-    - build-tools-25.0.3
-    - android-25
-    - sys-img-armeabi-v7a-google_apis-25
-    - extra-android-m2repository
-    - extra-google-m2repository
-    - extra-google-android-support
+  - tools
+  - platform-tools
+  - build-tools-25.0.3
+  - android-25
+  - sys-img-armeabi-v7a-google_apis-25
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - extra-google-android-support
 jdk: oraclejdk8
 sudo: false
 addons:
   apt:
-    # Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
     sources:
-      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
+    - ubuntu-toolchain-r-test
     packages:
-      - libstdc++6
-      - fonts-droid
+    - libstdc++6
+    - fonts-droid
 before_script:
-  - wget http://services.gradle.org/distributions/gradle-3.5-bin.zip
-  - unzip -qq gradle-3.5-bin.zip
-  - export GRADLE_HOME=$PWD/gradle-3.5
-  - export PATH=$GRADLE_HOME/bin:$PATH
-  - git clone https://github.com/flutter/flutter.git -b alpha --depth 1
+- wget http://services.gradle.org/distributions/gradle-3.5-bin.zip
+- unzip -qq gradle-3.5-bin.zip
+- export GRADLE_HOME=$PWD/gradle-3.5
+- export PATH=$GRADLE_HOME/bin:$PATH
+- git clone https://github.com/flutter/flutter.git -b alpha --depth 1
 script:
-  - ./flutter/bin/flutter -v build apk
+- "./flutter/bin/flutter -v build apk"
 deploy:
   provider: releases
-  api_key: "DAMJXc2APtpGzE26Va9hMaUK8U1PIHt/oJTgLK9lWQNBGRP6p9nR8tvTijKFNMklHJkeQeExXK2OyTp7EWeG0JoYSi+YlZUZhxZ0M01I6kVkeuX8avYB4rOUp+Vmt8e9Ruibl3PZFEIjK21WZ0JZraB5OWhVbnqHyg3dkFPm/broS6o/QFDpoXmZfs6KvH44i8qbh4jU97XONt+Y17Zju61M3qZ6d6i1gqi3/ad9AENK806dofSFsvM8l0BB/jSocpfbGWh1iKzsDOB7sLoj2ibjj7s/cD9/55NTT5n6vGduJGBgYUKSt9H1hz0kgywBvkDPHYwzImlm9Pdv0dxHvS5uD+9Nr9YsttpIbVzMS5JM/brGIDOBdoTrKzj+lKzaMcSpKXthQNZRntcrOIx6Wjd2G0c6uN8FzFriVAWq9JUbQDJklIbBRXCJyXfvn8/RH5my1b3zEH8eKiseDl6Q2b4L9sdGNYFZAzs92CaBqXioeWMeKVAhge9UxTkLKCxwpekboOKOZVCXdVQw6fFhODRi76fVJ1wX9i3uMDEVJ4Lt8QERKAhAM+btSdGkPgMmUrUldgSYua1vccqMqlAUe43Qs174mcLICp5PUzkJCF7PyjWKUwjBsur6oHW7k482tlTeLM2RuBgVgcxZwMAn04oZTcUt+dPqBAF0CP4P3Ek="
-  file: "app-release.apk"
+  api_key:
+    secure: B7f2GEHlkI5XJiVd/yZsH0rOFDGacfT534GLSKpOU3eC4TNrAXDJruMwQvA7eBdYzD9oAmiUY+NoO948/EYCz0U48iVc2AGSBwAmyxAh6ojZnHwjDDMkEiEEsbhDlAKomlkUgzWHlDDWpQ0qQYKJD0YAtl8KdsgK19YxZysmfJPRITk5JrdKw94ALI8LFmS6XWRPzIEWtYF22PH8DRncZR/wRbtqdTFKmB6bGW+56NPKR7mwnbDU/Xn8+Oi0yrAZ3/NUkVulqWwZSrjBFN6hk8qgoJ24HAFqjIG0MEliEsRjIxzTNtx+LfY1kGTyIS8xfUJKTZCoqJ3gHWSBN2C7mzUxvIHhhoFYZ1eNntY1Bmg060q1EvCx5uGbMceTiG3sJQHgnlLSQ2rIcEo43CHOBkxqJ9I+8hskmz73Je/l900gBIB4qh8nSW81PbWkqUPWnpiSEzejDdx+8AwMAj4ytu4vyWY5FAOsKRglHCHxpNkb18k0227YxU8aRQUx3OQBpQVjnnR/01z9br4vzZyzh2xGFkWR54sOLxr9wUjaXvuFiVTqoiDe7WU7tAgVEVHd58DpjmDJC+iVJo3q5/JNdTNNRKoYxw7+zhu753ShVCUvPWrhUAX0IgNGoYG8jXdZqkdszGEDKG8qouruzLVWCkScZAMixkktDeFveK7dWks=
+  file: app-release.apk
   skip_cleanup: true
   on:
-    tags: true
-
+    repo: javibm/project-gamesbase
 cache:
   directories:
-    - $HOME/.pub-cache
+  - "$HOME/.pub-cache"
