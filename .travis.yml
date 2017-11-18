@@ -32,6 +32,13 @@ before_script:
   - git clone https://github.com/flutter/flutter.git -b alpha --depth 1
 script:
   - ./flutter/bin/flutter -v build apk
+deploy:
+  provider: releases
+  api_key: "DAMJXc2APtpGzE26Va9hMaUK8U1PIHt/oJTgLK9lWQNBGRP6p9nR8tvTijKFNMklHJkeQeExXK2OyTp7EWeG0JoYSi+YlZUZhxZ0M01I6kVkeuX8avYB4rOUp+Vmt8e9Ruibl3PZFEIjK21WZ0JZraB5OWhVbnqHyg3dkFPm/broS6o/QFDpoXmZfs6KvH44i8qbh4jU97XONt+Y17Zju61M3qZ6d6i1gqi3/ad9AENK806dofSFsvM8l0BB/jSocpfbGWh1iKzsDOB7sLoj2ibjj7s/cD9/55NTT5n6vGduJGBgYUKSt9H1hz0kgywBvkDPHYwzImlm9Pdv0dxHvS5uD+9Nr9YsttpIbVzMS5JM/brGIDOBdoTrKzj+lKzaMcSpKXthQNZRntcrOIx6Wjd2G0c6uN8FzFriVAWq9JUbQDJklIbBRXCJyXfvn8/RH5my1b3zEH8eKiseDl6Q2b4L9sdGNYFZAzs92CaBqXioeWMeKVAhge9UxTkLKCxwpekboOKOZVCXdVQw6fFhODRi76fVJ1wX9i3uMDEVJ4Lt8QERKAhAM+btSdGkPgMmUrUldgSYua1vccqMqlAUe43Qs174mcLICp5PUzkJCF7PyjWKUwjBsur6oHW7k482tlTeLM2RuBgVgcxZwMAn04oZTcUt+dPqBAF0CP4P3Ek="
+  file: "app-release.apk"
+  skip_cleanup: true
+  on:
+    tags: true
 
 cache:
   directories:
