@@ -6,7 +6,7 @@ final Movie testMovie = new Movie(
   title: 'The Las of Us',
   rating: 9.0,
   starRating: 4,
-  categories: ['Action', 'Adventure', 'Survival Horor'],
+  categories: ['Action', 'Adventure', 'Survival Horor', 'Shooter'],
   storyline: 'In September 2013, an outbreak of a mutant Cordyceps fungus ravages the United States, '
       'transforming its human hosts into cannibalistic monsters known as infected. '
       'Joel, a man tasked with escorting a young girl, '
